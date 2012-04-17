@@ -148,13 +148,15 @@ cleanRelease: clean_all
 
 clean_all: clean_zip clean
 
+Clean: clean
+
 clean: clean_obj clean_cdb
 	rm -f $(EXE)
+	find . -name "*.bak" -exec rm -f {} \;
+	find . -name "*.temp" -exec rm -f {} \;
 
 clean_cdb:
 	rm -f $(EXE).layout $(EXE).depend
-	find . -name "*.bak" -exec rm -f {} \;
-	find . -name "*.temp" -exec rm -f {} \;
 	rm -Rf bin
 
 clean_zip:
