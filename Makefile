@@ -110,11 +110,11 @@ Release: $(EXE) clean_obj
 	cp -R $(REP_RES) bin/Release
 
 $(EXE): $(OBJ)
-	@echo "\n=== linking des objets ===\n"
+	@echo -e "\n=== linking des objets ===\n"
 	$(CC) -o $@ $^ $(CFLAGS)
 
 %.o: %.$(EXT) %.h
-	@echo "\n > compilation de $<"
+	@echo -e "\n > compilation de $<"
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 ##############################################################################
@@ -165,6 +165,6 @@ clean_zip:
 	rm -f $(EXE)_sources.zip
 	
 clean_obj:
-	@echo "\n=== Clean up du projet ===\n"
+	@echo -e "\n=== Clean up du projet ===\n"
 	rm -f $(OBJ)
-	@echo "done.\n"
+	@echo -e "done.\n"
